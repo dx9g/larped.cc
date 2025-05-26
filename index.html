@@ -633,7 +633,7 @@
     <div class="content">
       <div class="server-icon" style="background-image: url('https://cdn.discordapp.com/icons/1369778690069889094/3795c8cd87798010540d9a7f51334ec9.webp?size=56');"></div>
       <div class="server-name">LARP Guild</div>
-      <div class="description">Join our immersive roleplay experience and become part of a thriving community.</div>
+      <div class="description">Join my discord server for guild tag and cheap robux</div>
       <button class="join-btn" onclick="window.open('https://discord.gg/larpguild', '_blank')">Join Server</button>
     </div>
   </div>
@@ -641,23 +641,27 @@
 
 <!-- Styles -->
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
   .discord-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.4s ease;
   }
 
   .discord-modal.active {
-    display: flex;
+    opacity: 1;
     pointer-events: all;
-    animation: fadeIn 0.3s ease forwards;
   }
 
   .modal-content {
@@ -669,8 +673,14 @@
     overflow: hidden;
     position: relative;
     font-family: 'Poppins', sans-serif;
-    transform: scale(0.95);
-    animation: popUp 0.3s ease forwards;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .discord-modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
   }
 
   .banner {
@@ -737,32 +747,25 @@
   .close-button:hover {
     color: #fff;
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes popUp {
-    0% { transform: scale(0.9); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 </style>
 
 <!-- Script -->
 <script>
   function showInviteModal() {
     const modal = document.getElementById("discord-modal");
-    if (modal) modal.classList.add("active");
+    if (modal) {
+      modal.classList.add("active");
+    }
   }
 
   function closeInviteModal() {
     const modal = document.getElementById("discord-modal");
-    if (modal) modal.classList.remove("active");
+    if (modal) {
+      modal.classList.remove("active");
+    }
   }
 </script>
+
 
 </body>
 </html>
