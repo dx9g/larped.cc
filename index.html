@@ -523,13 +523,14 @@
       });
     }
     
-  const discordCopy = document.getElementById('discord-copy');
-  if (discordCopy) {
-    discordCopy.addEventListener('click', () => {
-     const modal = document.getElementById("discord-modal");
+const discordCopy = document.getElementById('discord-copy');
+if (discordCopy) {
+  discordCopy.addEventListener('click', () => {
+    const modal = document.getElementById("discord-modal");
     if (modal) modal.classList.add("active");
   });
 }
+
 
     const githubCopy = document.getElementById('github-copy');
     if (githubCopy) {
