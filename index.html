@@ -523,15 +523,12 @@
       });
     }
     
-const discordCopy = document.getElementById('discord-copy');
-if (discordCopy) {
-  discordCopy.addEventListener('click', () => {
-    const modal = document.getElementById("discord-modal");
-    if (modal) modal.classList.add("active");
-  });
-}
-
-
+    const discordCopy = document.getElementById('discord-copy');
+    if (discordCopy) {
+      discordCopy.addEventListener('click', () => { 
+        window.open('https://discord.com/users/1340049718922711090', '_blank'); 
+      });
+    }
     const githubCopy = document.getElementById('github-copy');
     if (githubCopy) {
       githubCopy.addEventListener('click', () => { 
@@ -553,6 +550,8 @@ if (discordCopy) {
         if(bgMusic) { bgMusic.volume = vol; }
       });
     }
+
+    
     
     function animateBioTexts(element, texts) {
       if (!element || !texts || texts.length === 0) return;
@@ -621,149 +620,6 @@ if (discordCopy) {
       }
       updateTitle();
     })();
-
-<!-- Discord Invite Modal -->
-<div id="discord-modal" class="discord-modal">
-  <div class="modal-content">
-    <div class="close-button" onclick="closeInviteModal()">✕</div>
-    <div class="banner" style="background-image: url('https://cdn.discordapp.com/splashes/1369778690069889094/339f2b1ce7a3d4d1a74362a42b771d2a.jpg?size=480');"></div>
-    <div class="content">
-      <div class="server-icon" style="background-image: url('https://cdn.discordapp.com/icons/1369778690069889094/3795c8cd87798010540d9a7f51334ec9.webp?size=56');"></div>
-      <div class="server-name">LARP Guild</div>
-      <div class="description">Join our immersive roleplay experience and become part of a thriving community.</div>
-      <button class="join-btn" onclick="window.open('https://discord.gg/larpguild', '_blank')">Join Server</button>
-    </div>
-  </div>
-</div>
-
-<!-- Trigger Button -->
-<button onclick="showInviteModal()" style="position: fixed; bottom: 20px; right: 20px;">Open Discord Invite</button>
-
-<!-- Styles -->
-<style>
-  .discord-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    pointer-events: none;
-  }
-
-  .discord-modal.active {
-    display: flex;
-    pointer-events: all;
-    animation: fadeIn 0.3s ease forwards;
-  }
-
-  .modal-content {
-    background-color: #2b2b2b;
-    color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    width: 400px;
-    overflow: hidden;
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-    transform: scale(0.95);
-    animation: popUp 0.3s ease forwards;
-  }
-
-  .banner {
-    width: 100%;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .content {
-    padding: 20px;
-    text-align: center;
-    background-color: #1f1f1f;
-  }
-
-  .server-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    margin: -40px auto 10px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .server-name {
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 5px;
-  }
-
-  .description {
-    font-size: 14px;
-    color: #ccc;
-    margin-bottom: 15px;
-  }
-
-  .join-btn {
-    padding: 10px 20px;
-    background-color: #3b3b3b;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .join-btn:hover {
-    background-color: #5c5c5c;
-  }
-
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    font-size: 18px;
-    cursor: pointer;
-    color: #aaa;
-    transition: color 0.2s ease;
-  }
-
-  .close-button:hover {
-    color: #fff;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes popUp {
-    0% { transform: scale(0.9); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-</style>
-
-<!-- Script -->
-<script>
-  function showInviteModal() {
-    const modal = document.getElementById("discord-modal");
-    if (modal) modal.classList.add("active");
-  }
-
-  function closeInviteModal() {
-    const modal = document.getElementById("discord-modal");
-    if (modal) modal.classList.remove("active");
-  }
-</script>
-
     
   </script>
 </body>
