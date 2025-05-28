@@ -205,9 +205,9 @@
       display: flex;
       align-items: center; /* Aligns items vertically in the center of this flex container */
       gap: 20px;
-      margin-bottom: 20px; /* Space below header before Roblox  */
+      margin-bottom: 20px; /* Space below header before Roblox avatar */
       position: relative; /* For banner absolute positioning context */
-      padding-top: 80px; /* Create space for banner, adjust this based on banner height and desired  overlap */
+      padding-top: 80px; /* Create space for banner, adjust this based on banner height and desired avatar overlap */
     }
     .profile-banner {
       position: absolute;
@@ -291,18 +291,18 @@
     /* Discord Profile  */
     .discord-profile {
       position: relative;
-      width: 80px; /*  size */
-      height: 80px; /*  size */
+      width: 80px; /* Avatar size */
+      height: 80px; /* Avatar size */
     }
-    .discord- {
+    .discord-avatar {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(40,40,40,0.8); /* Border to make  stand out */
+      border: 3px solid rgba(40,40,40,0.8); /* Border to make avatar stand out */
     }
-    /* Roblox  Container */
-    .roblox--container {
+    /* Roblox Avatar Container */
+    .roblox-avatar-container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -310,7 +310,7 @@
       z-index: 2;
       position: relative;
     }
-    .roblox--container img {
+    .roblox-avatar-container img {
       max-width: 100%;
       height: auto;
       background: none;
@@ -389,7 +389,7 @@
 </head>
 <body>
   <video class="bg-video" autoplay muted loop playsinline>
-    <source src="https://cdn.discordapp.com/attachments/1370524807120027752/1376527239948009562/B311C381-C2C9-484C-965D-C0CD5919D1B1.mp4?ex=6837a0a4&is=68364f24&hm=10f64865e7d4e21812368f7a47f71038e6afcc16a50b9cd69cd6bff7aa72b1f8&" type="video/mp4">
+    <source src="https://cdn.discordapp.com/attachments/1370524807120027752/1376527239948009562/B311C381-C2C9-484C-965D-C0CD5919D1B1.mp4?ex=6835a664&is=683454e4&hm=8bbf7b3fd619bbbf8f33d1e81496aae4ac60ed441081370ef3d6f92275cd01f0&" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   
@@ -413,11 +413,11 @@
     <div class="main-container" id="main-container">
       <div class="header-section">
         <div class="profile-banner">
-          <img src="https://i.ibb.co/WNRjGzS0/wirus1.jpg" alt=".">
+          <img src="https://media.discordapp.net/attachments/1370524807120027752/1376256951737913438/IMG_0362.jpg?ex=6834aaaa&is=6833592a&hm=d4562e248e2f57cc1039a74674a030dd69240d0f5c662c6e60dfaa8ce1636c47&=&format=webp&width=662&height=280" alt=".">
         </div>
         <div class="profile-picture">
           <div class="discord-profile">
-            <img class="discord-avatar" src="https://media.discordapp.net/attachments/1370524807120027752/1377186976918143046/IMG_1849.jpg?ex=68380cd2&is=6836bb52&hm=b92d87912f9f9f0ee7595678ab3bd3182506c573a7d38b5c3c56449f81a15831&=&format=webp&width=662&height=662" alt="."> 
+            <img class="discord-avatar" src="https://cdn.discordapp.com/attachments/1370524807120027752/1376256957840621619/IMG_1163.jpg?ex=6834aaac&is=6833592c&hm=846894cfcadcb1883ae2599d6af1a118cb8445cf5e18da8236654f99373d3bff&" alt="."> 
           </div>
         </div>
         <div class="user-info">
@@ -434,7 +434,7 @@
       </div>
       
       <div class="roblox-avatar-container">
-        <img src="https://tr.rbxcdn.com/30DAY-Avatar-505FB97661F2271B430FA6513349F373-Png/352/352/Avatar/Webp/noFilter" alt="Roblox Avatar">
+        <img src="https://tr.rbxcdn.com/30DAY-Avatar-B1231695B7967DB26F5314A47AEF80B1-Png/352/352/Avatar/Webp/noFilter" alt="Roblox Avatar">
       </div>
       
       <div class="spacer"></div>
@@ -532,6 +532,8 @@
       });
     }
 
+    
+    
     function animateBioTexts(element, texts) {
       if (!element || !texts || texts.length === 0) return;
       let index = 0;
@@ -606,7 +608,7 @@
 <div id="discord-modal" class="discord-modal">
   <div class="modal-content">
     <div class="close-button" onclick="closeInviteModal()">✕</div>
-    <div class="banner" style="background-image: url('https://cdn.discordapp.com/splashes/1369778690069889094/339f2b1ce7a3d4d1a74362a42b771d2a.jpg?size=480');"></div>
+    <div class="banner" style="background-image: url('https://cdn.discordapp.com/attachments/1370524807120027752/1376617939477987368/IMG_1880.jpg?ex=6835fadd&is=6834a95d&hm=4f8d450faa150b4c4f961519ee35df4d654c8b8125433dfd4d2c48309b069931&"></div>
     <div class="content">
       <div class="server-icon" style="background-image: url('https://cdn.discordapp.com/icons/1369778690069889094/3795c8cd87798010540d9a7f51334ec9.webp?size=56');"></div>
       <div class="server-name">LARP Guild</div>
@@ -742,6 +744,7 @@
     }
   }
 </script>
+
 
 </body>
 </html>
