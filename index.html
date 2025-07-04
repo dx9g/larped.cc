@@ -2,74 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>redirecting...</title>
+  <title>larped.cc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      background-color: black;
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
       margin: 0;
       padding: 0;
       height: 100%;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      font-family: 'Poppins', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-
-    #text {
-      font-size: 2rem;
-      white-space: nowrap;
+      color: white;
       overflow: hidden;
-      border-right: 2px solid white;
-      animation: blinkCursor 0.7s infinite;
     }
 
-    @keyframes blinkCursor {
-      0%, 50% { border-color: white; }
-      50.01%, 100% { border-color: transparent; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .glass-card h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      color: #ffffffcc;
+      animation: slideIn 1s ease-out;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 0;
+      margin: 15px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #222, #444);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #333, #666);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #ffffff88;
     }
   </style>
 </head>
 <body>
-  <div id="text">redirecting...</div>
-
-  <script>
-    const words = ["redirecting...", "larped.cc", "@2to", "@xei"];
-    const textElement = document.getElementById("text");
-    let currentWord = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    let loopDelay = 1000;
-
-    function typeEffect() {
-      let fullWord = words[currentWord];
-      let displayedText = isDeleting 
-                          ? fullWord.substring(0, currentChar--) 
-                          : fullWord.substring(0, currentChar++);
-
-      textElement.textContent = displayedText;
-      document.title = displayedText;
-
-      if (!isDeleting && currentChar === fullWord.length + 1) {
-        isDeleting = true;
-        setTimeout(typeEffect, loopDelay);
-      } else if (isDeleting && currentChar === 0) {
-        isDeleting = false;
-        currentWord = (currentWord + 1) % words.length;
-        setTimeout(typeEffect, 200);
-      } else {
-        setTimeout(typeEffect, isDeleting ? 50 : 90);
-      }
-    }
-
-    // Start typing animation
-    typeEffect();
-
-    // Redirect after a delay
-    setTimeout(() => {
-      window.location.href = "https://fakecrime.bio/xei";
-    }, 5000); // You can change this to a shorter/longer duration
-  </script>
+  <div class="glass-card">
+    <h1>Choose your destination</h1>
+    <button class="btn" onclick="window.location.href='https://guns.lol/.xei'">guns.lol/xei</button>
+    <button class="btn" onclick="window.location.href='https://fakecrime.bio/xei'">fakecrime.bio/xei</button>
+    <div class="footer">@larped.cc</div>
+  </div>
 </body>
 </html>
