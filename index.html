@@ -15,6 +15,8 @@
   <meta content="larped.cc - @xei" property="og:title" />
   <meta content=" " property="og:description" />
   <meta content="https://r2.fakecrime.bio/embeds/5b222354-ed98-49ed-a09d-7dacbbb05210.gif" property="og:image" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="600" />
   <meta name="theme-color" content="#2e2e2e">
 
   <style>
@@ -69,7 +71,7 @@
       border-radius: 20px;
       padding: 40px 60px;
       text-align: center;
-      max-width: 360px;
+      max-width: 400px;
       width: 90%;
       margin: auto;
       box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
@@ -83,6 +85,17 @@
       color: white;
       font-weight: 600;
       animation: slideIn 0.8s ease-out;
+    }
+
+    .embed-preview {
+      margin-top: 20px;
+    }
+
+    .embed-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 10px;
     }
 
     .btn {
@@ -167,6 +180,10 @@
       <h1>Choose your destination</h1>
       <button class="btn" onclick="window.location.href='https://guns.lol/.xei'">guns.lol/xei</button>
       <button class="btn" onclick="window.location.href='https://fakecrime.bio/xei'">fakecrime.bio/xei</button>
+      <div class="embed-preview">
+        <h2 style="font-size: 1.2rem; font-weight: 600; margin: 15px 0 5px;">larped.cc - @xei</h2>
+        <img src="https://r2.fakecrime.bio/embeds/5b222354-ed98-49ed-a09d-7dacbbb05210.gif" alt="Embed GIF Preview">
+      </div>
       <div class="footer">@2to</div>
     </div>
   </div>
@@ -182,11 +199,6 @@
 
     let snowflakes = [];
 
-    // Pre-generate snowflakes
-    for (let i = 0; i < 200; i++) {
-      snowflakes.push(createSnowflake(true));
-    }
-
     function createSnowflake(randomY = false) {
       return {
         x: Math.random() * width,
@@ -197,6 +209,10 @@
         angle: Math.random() * Math.PI * 2,
         opacity: Math.random() * 0.5 + 0.3
       };
+    }
+
+    for (let i = 0; i < 200; i++) {
+      snowflakes.push(createSnowflake(true));
     }
 
     function updateSnowflakes() {
