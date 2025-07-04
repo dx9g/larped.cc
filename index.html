@@ -8,6 +8,9 @@
   <style>
     * {
       box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     html, body {
@@ -17,6 +20,8 @@
       width: 100%;
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
+      background: black;
+      color: white;
     }
 
     body::before {
@@ -26,7 +31,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-image: url('your-image-or-gif.gif'); /* 🔁 Replace this with your image or gif */
+      background-image: url('https://i.ibb.co/RGrLkkHR/ed88cd28-c9f8-4d2a-b48c-76e5e8dce278.gif'); /* 🔁 Replace with your image or gif */
       background-size: cover;
       background-position: center;
       z-index: -2;
@@ -45,13 +50,12 @@
 
     .glass-card {
       position: relative;
-      background: rgba(0, 0, 0, 0.25); /* 25% transparent */
+      background: rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 40px 60px;
       text-align: center;
-      color: white;
       max-width: 360px;
       width: 90%;
       margin: auto;
@@ -64,6 +68,7 @@
       font-size: 1.9rem;
       margin-bottom: 25px;
       color: white;
+      font-weight: 600;
       animation: slideIn 0.8s ease-out;
     }
 
@@ -74,12 +79,15 @@
       margin: 10px 0;
       font-size: 1rem;
       font-weight: 600;
+      font-family: 'Poppins', sans-serif;
       border: 2px solid white;
       border-radius: 12px;
       background: transparent;
       color: white;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: all 0.3s ease;
+      text-align: center;
+      letter-spacing: 0.5px;
     }
 
     .btn:hover {
@@ -92,6 +100,7 @@
       margin-top: 20px;
       font-size: 0.85rem;
       color: #ffffffaa;
+      font-weight: 400;
     }
 
     @keyframes fadeIn {
@@ -134,7 +143,7 @@
       <h1>Choose your destination</h1>
       <button class="btn" onclick="window.location.href='https://guns.lol/.xei'">guns.lol/xei</button>
       <button class="btn" onclick="window.location.href='https://fakecrime.bio/xei'">fakecrime.bio/xei</button>
-      <div class="footer">@xei</div>
+      <div class="footer">@2to</div>
     </div>
   </div>
 </body>
