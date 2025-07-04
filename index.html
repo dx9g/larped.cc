@@ -10,56 +10,88 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      width: 100%;
       font-family: 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
       overflow: hidden;
     }
 
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url('your-image-or-gif.gif'); /* 🔁 Replace this with your image or gif */
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
     .glass-card {
-      background: rgba(255, 255, 255, 0.05);
+      position: relative;
+      background: rgba(0, 0, 0, 0.25); /* 25% transparent */
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 40px 60px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
       text-align: center;
-      animation: fadeIn 1.2s ease-out;
+      color: white;
+      max-width: 360px;
+      width: 90%;
+      margin: auto;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1s ease-out;
+      z-index: 1;
     }
 
     .glass-card h1 {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-      color: #ffffffcc;
-      animation: slideIn 1s ease-out;
+      font-size: 1.9rem;
+      margin-bottom: 25px;
+      color: white;
+      animation: slideIn 0.8s ease-out;
     }
 
     .btn {
       display: block;
       width: 100%;
-      padding: 15px 0;
-      margin: 15px 0;
+      padding: 14px;
+      margin: 10px 0;
       font-size: 1rem;
       font-weight: 600;
-      border: none;
+      border: 2px solid white;
       border-radius: 12px;
-      cursor: pointer;
+      background: transparent;
       color: white;
-      background: linear-gradient(135deg, #222, #444);
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: 0.3s ease;
     }
 
     .btn:hover {
-      background: linear-gradient(135deg, #333, #666);
-      transform: scale(1.05);
+      background: white;
+      color: black;
+      transform: scale(1.03);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #ffffffaa;
     }
 
     @keyframes fadeIn {
@@ -84,19 +116,26 @@
       }
     }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: #ffffff88;
+    .container {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
   </style>
 </head>
 <body>
-  <div class="glass-card">
-    <h1>Choose your destination</h1>
-    <button class="btn" onclick="window.location.href='https://guns.lol/.xei'">guns.lol/xei</button>
-    <button class="btn" onclick="window.location.href='https://fakecrime.bio/xei'">fakecrime.bio/xei</button>
-    <div class="footer">@larped.cc</div>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="glass-card">
+      <h1>Choose your destination</h1>
+      <button class="btn" onclick="window.location.href='https://guns.lol/.xei'">guns.lol/xei</button>
+      <button class="btn" onclick="window.location.href='https://fakecrime.bio/xei'">fakecrime.bio/xei</button>
+      <div class="footer">@xei</div>
+    </div>
   </div>
 </body>
 </html>
