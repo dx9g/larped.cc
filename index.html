@@ -4,12 +4,18 @@
   <meta charset="UTF-8">
   <title>larped.cc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1279593721947488296/1387226665083736166/VyLhVqI.png?ex=68691942&is=6867c7c2&hm=dfd6350108ca341505737510d49e0e5e27c49e006eece53f3b63720b3613ac33&=&format=webp&quality=lossless&width=960&height=960">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Discord Embed -->
+  <meta content="larped.cc - @xei" property="og:title" />
+  <meta content="Choose your destination. Stay anonymous." property="og:description" />
+  <meta content="https://r2.fakecrime.bio/embeds/5b222354-ed98-49ed-a09d-7dacbbb05210.gif" property="og:image" />
+  <meta name="theme-color" content="#2e2e2e">
 
   <style>
     * {
@@ -37,11 +43,11 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-image: url('https://images-ext-1.discordapp.net/external/3C3v5EM0QJqm0GCRQHdv8m1D2dgYQfYUXrwKx6FK_Uw/https/media.tenor.com/aqQgUiMwt3gAAAPo/anime-monochrome.mp4'); /* Replace with your image or gif */
+      background-image: url('https://images-ext-1.discordapp.net/external/3C3v5EM0QJqm0GCRQHdv8m1D2dgYQfYUXrwKx6FK_Uw/https/media.tenor.com/aqQgUiMwt3gAAAPo/anime-monochrome.mp4');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      z-index: -2;
+      z-index: -3;
     }
 
     .overlay {
@@ -52,7 +58,7 @@
       width: 100%;
       background: black;
       opacity: 0.5;
-      z-index: -1;
+      z-index: -2;
     }
 
     .glass-card {
@@ -140,10 +146,20 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      z-index: 1;
+    }
+
+    canvas#snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
     }
   </style>
 </head>
 <body>
+  <canvas id="snow"></canvas>
   <div class="overlay"></div>
 
   <div class="container">
@@ -154,5 +170,60 @@
       <div class="footer">@2to</div>
     </div>
   </div>
+
+  <!-- Snowfall Script -->
+  <script>
+    const canvas = document.getElementById('snow');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    let snowflakes = [];
+
+    function createSnowflake() {
+      snowflakes.push({
+        x: Math.random() * width,
+        y: -10,
+        radius: Math.random() * 2 + 1,
+        speedY: Math.random() * 1 + 0.5,
+        opacity: Math.random() * 0.5 + 0.3
+      });
+    }
+
+    function updateSnowflakes() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = snowflakes.length - 1; i >= 0; i--) {
+        const s = snowflakes[i];
+        s.y += s.speedY;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
+        ctx.fill();
+
+        if (s.y > height) {
+          snowflakes.splice(i, 1);
+        }
+      }
+    }
+
+    function animateSnow() {
+      updateSnowflakes();
+      if (snowflakes.length < 200) {
+        createSnowflake();
+      }
+      requestAnimationFrame(animateSnow);
+    }
+
+    animateSnow();
+
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  </script>
 </body>
 </html>
